@@ -1,0 +1,288 @@
+{
+  "datasets": {
+    "m1_dfire": {
+      "dataset": "m1_dfire",
+      "splits": {
+        "train": {
+          "list": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/train.txt",
+          "images": 13901,
+          "missing": 0,
+          "bytes": 1801017771
+        },
+        "val": {
+          "list": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/val.txt",
+          "images": 1739,
+          "missing": 0,
+          "bytes": 183248588
+        },
+        "test": {
+          "list": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/test.txt",
+          "images": 1737,
+          "missing": 0,
+          "bytes": 185253226
+        }
+      },
+      "images_missing": [],
+      "labels_missing": [],
+      "label_class_ids_seen": [
+        0,
+        1
+      ],
+      "label_parse_errors": 0,
+      "images_bytes": 2169519585,
+      "labels_bytes": 1691556,
+      "labels_scanned": 17377,
+      "class_ids_ok": true,
+      "class_semantics": {
+        "0": "smoke",
+        "1": "fire"
+      },
+      "split_method": {
+        "method": "leakage-aware group-aware re-split (dHash64 + source keys + temporal adjacency)",
+        "seed": 20261001,
+        "parameters": {
+          "group_threshold_hamming": 8,
+          "temporal_rule": "D-Fire only: same prefix, seq gap<=2, hamming<=16",
+          "ratios_target": {
+            "train": 0.8,
+            "val": 0.1,
+            "test": 0.1
+          },
+          "hash_cache": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/.hash_cache.npz"
+        },
+        "groups_total": 8635,
+        "images_used": 17377,
+        "exact_duplicates_quarantined": 4150,
+        "leakage_verification": {
+          "cross_split_pairs_hamming<=8_NEW": 0,
+          "cross_split_pairs_hamming<=4_NEW": 0,
+          "cross_split_pairs_hamming<=2_NEW": 0,
+          "cross_split_pairs_hamming<=8_OFFICIAL_OLD": 248594,
+          "cross_split_pairs_hamming<=2_OFFICIAL_OLD": 35733,
+          "cross_split_pairs_hamming<=8_OFFICIAL_OLD_post_quarantine": 60458,
+          "cross_split_pairs_hamming<=2_OFFICIAL_OLD_post_quarantine": 3759,
+          "verdict": "PASS - zero cross-split near-duplicate pairs at Hamming <= 8"
+        }
+      }
+    },
+    "m2_hardhats": {
+      "dataset": "m2_hardhats",
+      "splits": {
+        "train": {
+          "list": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/train.txt",
+          "images": 12199,
+          "missing": 0,
+          "bytes": 684103415
+        },
+        "val": {
+          "list": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/val.txt",
+          "images": 3486,
+          "missing": 0,
+          "bytes": 202521402
+        },
+        "test": {
+          "list": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/test.txt",
+          "images": 1742,
+          "missing": 0,
+          "bytes": 101339025
+        }
+      },
+      "images_missing": [],
+      "labels_missing": [],
+      "label_class_ids_seen": [
+        0,
+        1
+      ],
+      "label_parse_errors": 0,
+      "images_bytes": 987963842,
+      "labels_bytes": 1903952,
+      "labels_scanned": 17427,
+      "class_ids_ok": true,
+      "class_semantics": {
+        "0": "hardhat (report as helmet)",
+        "1": "no-hardhat (report as no_helmet)"
+      },
+      "split_method": {
+        "method": "leakage-aware group-aware re-split (dHash64 + source keys + temporal adjacency)",
+        "seed": 20261001,
+        "parameters": {
+          "group_threshold_hamming": 8,
+          "temporal_rule": "D-Fire only: same prefix, seq gap<=2, hamming<=16",
+          "ratios_target": {
+            "train": 0.7,
+            "val": 0.2,
+            "test": 0.1
+          },
+          "hash_cache": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/.hash_cache.npz"
+        },
+        "groups_total": 13701,
+        "images_used": 17427,
+        "exact_duplicates_quarantined": 2318,
+        "leakage_verification": {
+          "cross_split_pairs_hamming<=8_NEW": 0,
+          "cross_split_pairs_hamming<=4_NEW": 0,
+          "cross_split_pairs_hamming<=2_NEW": 0,
+          "cross_split_pairs_hamming<=8_OFFICIAL_OLD": 83578,
+          "cross_split_pairs_hamming<=2_OFFICIAL_OLD": 17424,
+          "cross_split_pairs_hamming<=8_OFFICIAL_OLD_post_quarantine": 15954,
+          "cross_split_pairs_hamming<=2_OFFICIAL_OLD_post_quarantine": 1159,
+          "verdict": "PASS - zero cross-split near-duplicate pairs at Hamming <= 8"
+        }
+      }
+    }
+  },
+  "support_files": {
+    "m1_dfire": {
+      "datasets/production/dfire/dfire_native.yaml": {
+        "exists": true,
+        "bytes": 2247
+      },
+      "datasets/production/dfire/leakage_aware/train.txt": {
+        "exists": true,
+        "bytes": 1147308
+      },
+      "datasets/production/dfire/leakage_aware/val.txt": {
+        "exists": true,
+        "bytes": 143103
+      },
+      "datasets/production/dfire/leakage_aware/test.txt": {
+        "exists": true,
+        "bytes": 142780
+      },
+      "datasets/production/dfire/leakage_aware/quarantine.txt": {
+        "exists": true,
+        "bytes": 341077
+      },
+      "datasets/production/dfire/leakage_aware/quarantine_manifest.csv": {
+        "exists": true,
+        "bytes": 787751
+      },
+      "datasets/production/dfire/leakage_aware/leakage_aware_report.json": {
+        "exists": true,
+        "bytes": 2862
+      },
+      "datasets/production/dfire/leakage_aware/leakage_aware_report.md": {
+        "exists": true,
+        "bytes": 1646
+      },
+      "datasets/production/dfire/PROVENANCE.md": {
+        "exists": true,
+        "bytes": 4567
+      },
+      "datasets/production/dfire/CLASS_MAPPING_VERIFICATION.md": {
+        "exists": true,
+        "bytes": 2695
+      },
+      "datasets/production/dfire/CLASS_MAPPING_VERIFICATION.json": {
+        "exists": true,
+        "bytes": 1701
+      }
+    },
+    "m2_hardhats": {
+      "datasets/production/hardhats/hardhats_native.yaml": {
+        "exists": true,
+        "bytes": 1980
+      },
+      "datasets/production/hardhats/leakage_aware/train.txt": {
+        "exists": true,
+        "bytes": 1558558
+      },
+      "datasets/production/hardhats/leakage_aware/val.txt": {
+        "exists": true,
+        "bytes": 443089
+      },
+      "datasets/production/hardhats/leakage_aware/test.txt": {
+        "exists": true,
+        "bytes": 221724
+      },
+      "datasets/production/hardhats/leakage_aware/quarantine.txt": {
+        "exists": true,
+        "bytes": 295087
+      },
+      "datasets/production/hardhats/leakage_aware/quarantine_manifest.csv": {
+        "exists": true,
+        "bytes": 649548
+      },
+      "datasets/production/hardhats/leakage_aware/leakage_aware_report.json": {
+        "exists": true,
+        "bytes": 2896
+      },
+      "datasets/production/hardhats/leakage_aware/leakage_aware_report.md": {
+        "exists": true,
+        "bytes": 1676
+      },
+      "datasets/production/hardhats/PROVENANCE.md": {
+        "exists": true,
+        "bytes": 4551
+      }
+    }
+  },
+  "shared": {
+    "DATASET_READY_FOR_TRAINING.md": {
+      "exists": true,
+      "bytes": 7945
+    },
+    "datasets/production/DATASET_VALIDATION_FINAL.json": {
+      "exists": true,
+      "bytes": 3162
+    },
+    "datasets/production/PPE_ARCHITECTURE_DECISION.md": {
+      "exists": true,
+      "bytes": 4315
+    },
+    "datasets/REACQUISITION_REPORT.md": {
+      "exists": true,
+      "bytes": 12104
+    },
+    "datasets/DATASET_REPORT.md": {
+      "exists": true,
+      "bytes": 14527
+    },
+    "datasets/DATASET_STRATEGY.md": {
+      "exists": true,
+      "bytes": 9140
+    },
+    "requirements.txt": {
+      "exists": true,
+      "bytes": 1087
+    },
+    "scripts/train_approved.sh": {
+      "exists": true,
+      "bytes": 2278
+    },
+    "scripts/run_approved_pipeline.sh": {
+      "exists": true,
+      "bytes": 2561
+    },
+    "scripts/eval_approved_model.py": {
+      "exists": true,
+      "bytes": 3274
+    },
+    "scripts/benchmark_inference.py": {
+      "exists": true,
+      "bytes": 2926
+    },
+    "scripts/failure_cases.py": {
+      "exists": true,
+      "bytes": 7294
+    },
+    "scripts/qualitative_approved.py": {
+      "exists": true,
+      "bytes": 3194
+    },
+    "models/yolo26n.pt": {
+      "exists": true,
+      "bytes": 5544453
+    }
+  },
+  "disk": {
+    "free_bytes": 2118410240,
+    "free_GB": 2.12
+  },
+  "transfer_estimate": {
+    "images_labels_payload_bytes": 3161078935,
+    "payload_GB": 3.16,
+    "zip_estimate_GB": 3.19,
+    "note": "jpg payloads are already compressed; stored zip ~= payload size"
+  }
+}
