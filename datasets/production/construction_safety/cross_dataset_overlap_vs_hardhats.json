@@ -1,0 +1,50 @@
+{
+  "hardhats_images": 19745,
+  "construction_safety_images": 398,
+  "pairs_hamming<=0": 236,
+  "d0_examples": [
+    {
+      "hardhats": "-1161-_png_jpg.rf.2a5a4b730cb24b88b00746e6995ce4a8.jpg",
+      "construction_safety": "-1161-_png_jpg.rf.1046ef196746e00d2769c59b69d65a07.jpg"
+    },
+    {
+      "hardhats": "-1480-_png_jpg.rf.37e1e0340e3b9326761509374cee1a12.jpg",
+      "construction_safety": "-1480-_png_jpg.rf.048433d8b6ec1537a00fdbe302abd07d.jpg"
+    },
+    {
+      "hardhats": "-1670-_png_jpg.rf.2157fc1522c8ef116db13fbe2bf843b1.jpg",
+      "construction_safety": "-1670-_png_jpg.rf.401e319f51f626c5e05ec0692c49b6c4.jpg"
+    },
+    {
+      "hardhats": "-3394-_png_jpg.rf.29d28027ad346492cfbc1a30b3fd0cf7.jpg",
+      "construction_safety": "-3394-_png_jpg.rf.1f539d5f457ea00f39c4646b7f0bf4ee.jpg"
+    },
+    {
+      "hardhats": "-34-_png_jpg.rf.e42296163dac8babc6f318db1971cdc0.jpg",
+      "construction_safety": "-34-_png_jpg.rf.61ff118b0e674a5f51db18a5aa689434.jpg"
+    },
+    {
+      "hardhats": "-3668-_png_jpg.rf.cc1fc78da299b69d24e21240c7006d69.jpg",
+      "construction_safety": "-3668-_png_jpg.rf.a600be55506629dabd94648ada93c2fd.jpg"
+    },
+    {
+      "hardhats": "-3795-_png_jpg.rf.24dabf88ea1b0e2057d75ccc6fe9972b.jpg",
+      "construction_safety": "-3795-_png_jpg.rf.0c7b447637fe65c48968e634cf6a7834.jpg"
+    },
+    {
+      "hardhats": "-806-_png_jpg.rf.a549d7cd9a9cafb392e78c87c4da117e.jpg",
+      "construction_safety": "-806-_png_jpg.rf.c2b3c1f4f30a498ae2dcc00cc949316b.jpg"
+    },
+    {
+      "hardhats": "-850-_png_jpg.rf.9447927b7ea4a4ef51c02b35562b6bf6.jpg",
+      "construction_safety": "-850-_png_jpg.rf.04a228fa620d29ecd8151e0d91801033.jpg"
+    },
+    {
+      "hardhats": "000005_jpg.rf.963ea3698940ade4755ecba4f1d459d8.jpg",
+      "construction_safety": "000005_jpg.rf.1dff56de01dcdb0f0b43816560736672.jpg"
+    }
+  ],
+  "pairs_hamming<=2": 864,
+  "pairs_hamming<=4": 1985,
+  "pairs_hamming<=8": 4724
+}

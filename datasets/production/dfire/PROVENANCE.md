@@ -54,3 +54,19 @@ No official validation split in this archive (train/test only). The repo's `spli
 ## Relation to lost-workspace historical numbers [HISTORICAL]
 
 User-documented production stats (17,806 images / 13,696 fire / 10,512 smoke / 7,665 negatives) do NOT match this official copy (21,527 / 14,692 / 11,865 / 9,838). The lost production set was a filtered/re-labeled derivative (documented night-frame noise removal + likely class remap). The filter criteria are lost; re-deriving them is a pre-training decision.
+
+---
+
+## UPDATE (2026-10-01, correction phase)
+
+1. **Class mapping is now FINAL and VERIFIED**: `0 = smoke`, `1 = fire`
+   (statistical layer: all 7 composition/box checks match the official README
+   rows; visual layer: class-colored grids inspected and confirmed).
+   See `CLASS_MAPPING_VERIFICATION.md`. The earlier "remap decision deferred"
+   note is resolved — the native order IS the production order; the demo
+   schema (0=fire,1=smoke) is legacy demo-only.
+2. **Official splits are superseded** by the leakage-aware group-aware re-split
+   (`leakage_aware/`, seed 20261001): 4,150 exact duplicates (dHash d=0)
+   quarantined; 17,377 images in 8,635 groups split 80/10/10; zero cross-split
+   near-duplicate pairs at Hamming <= 8 (official split had 35,733 pairs <= 2).
+   `dfire_native.yaml` now points at the leakage-aware lists.

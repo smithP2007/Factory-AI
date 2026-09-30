@@ -1,0 +1,56 @@
+{
+  "verified_mapping": {
+    "0": "smoke",
+    "1": "fire"
+  },
+  "dataset": "D-Fire (official archive, acquired 2026-10-01)",
+  "statistical_layer": {
+    "official_readme_table": {
+      "only_smoke_images": 5867,
+      "only_fire_images": 1164,
+      "fire_and_smoke_images": 4658,
+      "negative_images": 9838,
+      "smoke_boxes": 11865,
+      "fire_boxes": 14692
+    },
+    "measured": {
+      "total_images": 21527,
+      "only_class0": 5867,
+      "only_class1": 1164,
+      "both_classes": 4658,
+      "negatives": 9838,
+      "composition_all": {
+        "()": 9838,
+        "(0,)": 5867,
+        "(0, 1)": 4658,
+        "(1,)": 1164
+      },
+      "boxes_class0": 11865,
+      "boxes_class1": 14692,
+      "degenerate_boxes": 18
+    },
+    "checks": {
+      "only_class0_equals_official_only_smoke": true,
+      "only_class1_equals_official_only_fire": true,
+      "both_equals_official": true,
+      "negatives_equal_official": true,
+      "boxes_class0_equal_official_smoke": true,
+      "boxes_class1_equal_official_fire": true,
+      "total_images_equal_official": true
+    },
+    "pass": true
+  },
+  "visual_layer": {
+    "grids": [
+      "outputs/dataset_preview/production/dfire_mapping_verification/class0_only_expect_smoke.jpg",
+      "outputs/dataset_preview/production/dfire_mapping_verification/class1_only_expect_fire.jpg",
+      "outputs/dataset_preview/production/dfire_mapping_verification/both_expect_smoke_cyan_fire_orange.jpg"
+    ],
+    "color_legend": {
+      "class0": "cyan (BGR 255,255,0)",
+      "class1": "orange (BGR 0,165,255)"
+    },
+    "human_review": "REQUIRED - see CLASS_MAPPING_VERIFICATION.md for recorded verdicts"
+  },
+  "note_degenerate_boxes": 18
+}

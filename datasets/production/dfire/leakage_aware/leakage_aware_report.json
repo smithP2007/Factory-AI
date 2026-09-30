@@ -1,0 +1,118 @@
+{
+  "dataset": "dfire",
+  "method": "leakage-aware group-aware re-split (dHash64 + source keys + temporal adjacency)",
+  "seed": 20261001,
+  "parameters": {
+    "group_threshold_hamming": 8,
+    "temporal_rule": "D-Fire only: same prefix, seq gap<=2, hamming<=16",
+    "ratios_target": {
+      "train": 0.8,
+      "val": 0.1,
+      "test": 0.1
+    },
+    "hash_cache": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/.hash_cache.npz"
+  },
+  "images_total_official": 21527,
+  "exact_duplicates_quarantined": 4150,
+  "images_used": 17377,
+  "groups_total": 8635,
+  "group_size_distribution": {
+    "1": 8113,
+    "2-5": 419,
+    "6-50": 99,
+    "51-500": 2,
+    ">500": 2
+  },
+  "largest_groups": [
+    5508,
+    842,
+    383,
+    198,
+    50,
+    45,
+    43,
+    43,
+    42,
+    39
+  ],
+  "profile_assignment": {
+    "negative": {
+      "images": 10154,
+      "groups": 2813,
+      "train_images": 8123,
+      "val_images": 1016,
+      "test_images": 1015
+    },
+    "smoke_only": {
+      "images": 3471,
+      "groups": 2540,
+      "train_images": 2777,
+      "val_images": 347,
+      "test_images": 347
+    },
+    "fire_and_smoke": {
+      "images": 3275,
+      "groups": 2892,
+      "train_images": 2620,
+      "val_images": 328,
+      "test_images": 327
+    },
+    "fire_only": {
+      "images": 477,
+      "groups": 390,
+      "train_images": 381,
+      "val_images": 48,
+      "test_images": 48
+    }
+  },
+  "splits": {
+    "train": {
+      "images": 13901,
+      "groups": 5337,
+      "boxes": 20608,
+      "class_counts": {
+        "smoke": 8796,
+        "fire": 11812
+      }
+    },
+    "val": {
+      "images": 1739,
+      "groups": 1650,
+      "boxes": 1753,
+      "class_counts": {
+        "smoke": 786,
+        "fire": 967
+      }
+    },
+    "test": {
+      "images": 1737,
+      "groups": 1648,
+      "boxes": 1791,
+      "class_counts": {
+        "smoke": 794,
+        "fire": 997
+      }
+    }
+  },
+  "negatives_per_split": {
+    "train": 5315,
+    "val": 1014,
+    "test": 1010
+  },
+  "leakage_verification": {
+    "cross_split_pairs_hamming<=8_NEW": 0,
+    "cross_split_pairs_hamming<=4_NEW": 0,
+    "cross_split_pairs_hamming<=2_NEW": 0,
+    "cross_split_pairs_hamming<=8_OFFICIAL_OLD": 248594,
+    "cross_split_pairs_hamming<=2_OFFICIAL_OLD": 35733,
+    "cross_split_pairs_hamming<=8_OFFICIAL_OLD_post_quarantine": 60458,
+    "cross_split_pairs_hamming<=2_OFFICIAL_OLD_post_quarantine": 3759,
+    "verdict": "PASS - zero cross-split near-duplicate pairs at Hamming <= 8"
+  },
+  "intra_split_near_dup_pairs<=8": 145733,
+  "outputs": {
+    "train": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/train.txt",
+    "val": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/val.txt",
+    "test": "/home/z/my-project/Factory-AI/datasets/production/dfire/leakage_aware/test.txt"
+  }
+}

@@ -1,27 +1,42 @@
-# Hard Hats (Roboflow "Hard Hats" v2 via keremberke HF mirror) — NATIVE class order
+# Hard Hats v2 (Roboflow "Hard Hats" via keremberke HF mirror) — PRODUCTION PPE (head-level)
 #
-# Native classes: 0=hardhat, 1=no-hardhat.
-# Mapping to the proposed 5-class PPE target (see PROVENANCE.md):
-#   hardhat -> helmet (1), no-hardhat -> no_helmet (2)
-#   person / safety_vest / gloves: NOT covered by this source.
+# SCOPE (verified): this dataset supplies ONLY the head-level helmet classes:
+#     0 = hardhat   -> target class "helmet"
+#     1 = no-hardhat-> target class "no_helmet"
+# It does NOT provide person / safety_vest / gloves annotations. It must NOT be
+# merged with other sources (annotation policies differ; several images visibly
+# contain safety vests that are NOT annotated - confirmed visually in
+# outputs/dataset_preview/production/hardhats_leakage_aware/val_preview.jpg).
 #
-# DO NOT TRAIN YET: cross-split near-duplicate leakage documented in
-# PROVENANCE.md (train<->test 5,438 near-identical pairs). Re-split/dedup
-# decision is gated on user approval.
-#
-# License: CC BY 4.0 (Roboflow export).
+# Leakage-aware split (REQUIRED - official split leaks):
+#   official train/valid/test contains near-identical frame pairs across splits
+#   (train<->test 5,438 pairs <= 2 Hamming; train<->valid 10,974; valid<->test 1,012).
+#   Use the group-aware re-split lists instead (see LEAKAGE_AWARE notes in
+#   leakage_aware/leakage_aware_report.md). Training config below points at them.
 
 path: /home/z/my-project/Factory-AI/datasets/production/hardhats
 
-train: train/images
-val: valid/images
-test: test/images
+train: leakage_aware/train.txt
+val: leakage_aware/val.txt
+test: leakage_aware/test.txt
 
+# Official splits kept for reference only (LEAKY - do not evaluate on these):
+# train: train/images
+# val:   valid/images
+# test:  test/images
+
+# Native class order (as annotated by the source):
 names:
   0: hardhat
   1: no-hardhat
 
-# Proposed target mapping (to be applied ONLY after approval):
-# names:
-#   1: helmet      # from hardhat
-#   2: no_helmet   # from no-hardhat
+# Target-schema mapping (applied at integration time by the compliance engine /
+# multi-model architecture - NOT by renaming classes here):
+#   hardhat    -> helmet    (target id 1)
+#   no-hardhat -> no_helmet (target id 2)
+# person (target 0) comes from the COCO-pretrained base detector, NOT from this
+# dataset. safety_vest (3) / gloves (4): no verified source acquired yet.
+#
+# License: CC BY 4.0 (declared in README.dataset.txt and every COCO licenses entry).
+# Export: Roboflow "Hard Hats" v2, resized640_noAugmentation-FAST, 2023-01-16,
+# via https://huggingface.co/datasets/keremberke/hard-hat-detection (public, no API key).

@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-01",
+  "datasets": {
+    "dfire": {
+      "splits": {
+        "train": {
+          "images": 13901,
+          "invalid_images": 0,
+          "boxes": 20608,
+          "class_counts": {
+            "smoke": 8796,
+            "fire": 11812
+          },
+          "negatives": 5315
+        },
+        "val": {
+          "images": 1739,
+          "invalid_images": 0,
+          "boxes": 1753,
+          "class_counts": {
+            "smoke": 786,
+            "fire": 967
+          },
+          "negatives": 1014
+        },
+        "test": {
+          "images": 1737,
+          "invalid_images": 0,
+          "boxes": 1791,
+          "class_counts": {
+            "smoke": 794,
+            "fire": 997
+          },
+          "negatives": 1010
+        }
+      },
+      "errors": 0,
+      "yaml_names": {
+        "0": "smoke",
+        "1": "fire"
+      },
+      "yaml_matches_verified_mapping": true,
+      "split_lists_used": {
+        "train": "leakage_aware/train.txt",
+        "val": "leakage_aware/val.txt",
+        "test": "leakage_aware/test.txt"
+      },
+      "leakage": {
+        "cross_split_le8_NEW": 0,
+        "cross_split_le2_OLD_official": 35733,
+        "groups_total": 8635,
+        "quarantined_exact_dups": 4150
+      }
+    },
+    "hardhats": {
+      "splits": {
+        "train": {
+          "images": 12199,
+          "invalid_images": 0,
+          "boxes": 33492,
+          "class_counts": {
+            "hardhat": 26727,
+            "no-hardhat": 6765
+          },
+          "negatives": 208
+        },
+        "val": {
+          "images": 3486,
+          "invalid_images": 0,
+          "boxes": 11039,
+          "class_counts": {
+            "hardhat": 8301,
+            "no-hardhat": 2738
+          },
+          "negatives": 60
+        },
+        "test": {
+          "images": 1742,
+          "invalid_images": 0,
+          "boxes": 5573,
+          "class_counts": {
+            "hardhat": 4171,
+            "no-hardhat": 1402
+          },
+          "negatives": 30
+        }
+      },
+      "errors": 0,
+      "yaml_names": {
+        "0": "hardhat",
+        "1": "no-hardhat"
+      },
+      "yaml_matches_verified_mapping": true,
+      "split_lists_used": {
+        "train": "leakage_aware/train.txt",
+        "val": "leakage_aware/val.txt",
+        "test": "leakage_aware/test.txt"
+      },
+      "leakage": {
+        "cross_split_le8_NEW": 0,
+        "cross_split_le2_OLD_official": 17424,
+        "groups_total": 13701,
+        "quarantined_exact_dups": 2318
+      }
+    },
+    "construction_safety": {
+      "status": "EVIDENCE_ONLY - not approved for training",
+      "errors_total": 0,
+      "overlap_vs_hardhats_d0": 236
+    },
+    "coco_person_reference": {
+      "status": "EVAL_REFERENCE_ONLY",
+      "images": 5000,
+      "person_boxes": 10777,
+      "unreadable": 0
+    }
+  },
+  "demo_untouched": {
+    "ppe": {
+      "images": 17,
+      "expected": 17,
+      "ok": true
+    },
+    "fire_smoke": {
+      "images": 20,
+      "expected": 20,
+      "ok": true
+    }
+  },
+  "credential_scan": {
+    "files_scanned_root": "/home/z/my-project/Factory-AI/datasets/production",
+    "hits": []
+  },
+  "overall": "PASS"
+}

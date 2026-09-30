@@ -1,5 +1,14 @@
 # PS6 Day 2 — Dataset Report
 
+> **ERRATUM (2026-10-01, post-reacquisition)**: this Day 2 report states in three
+> places that the fire/smoke schema (`0=fire, 1=smoke`) "matches D-Fire class
+> indices" / is a "drop-in replacement". That claim is **WRONG** for the official
+> D-Fire archive, whose verified class order is **`0 = smoke`, `1 = fire`**
+> (statistical + visual evidence: `datasets/production/dfire/CLASS_MAPPING_VERIFICATION.md`).
+> The demo schema below remains valid for the 20-image demo set only. Production
+> fire/smoke must use `datasets/production/dfire/dfire_native.yaml`.
+> The historical text below is preserved verbatim.
+
 **Prepared on**: 2026-09-29 (UTC+8)
 **Prepared by**: PS6 sandbox pipeline (auto-generated)
 **Pipeline scripts**: `scripts/download_wikimedia.py`, `scripts/auto_label.py`, `scripts/split_dataset.py`, `scripts/validate_dataset.py`, `scripts/visualize_dataset.py`, `scripts/quarantine_duplicates.py`

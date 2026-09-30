@@ -128,3 +128,26 @@ To be added in Day 3 (not yet written): a **source-gating pre-processor** implem
 ## 7. Explicit Non-Goals Until Approval
 
 No Day 3 training, no dataset downloads/merging, no schema/config rewrites, no compliance-engine implementation. The demo datasets remain the only on-disk data and are placeholders, not training sets.
+
+---
+
+## 8. ADDENDUM (2026-10-01, correction phase — supersedes parts of §4–§6)
+
+Status after the reacquisition + correction phases (evidence in
+`production/PPE_ARCHITECTURE_DECISION.md`, `DATASET_READY_FOR_TRAINING.md`):
+
+1. D-Fire class order: the Day 2 "indices match D-Fire" claim was WRONG.
+   Final production mapping is **0=smoke, 1=fire** (verified statistically +
+   visually; `production/dfire/CLASS_MAPPING_VERIFICATION.md`).
+2. Official splits of both reacquired datasets leak near-identical frames.
+   Replaced by leakage-aware group-aware re-splits
+   (`production/*/leakage_aware/`; zero cross-split pairs at Hamming <= 8).
+3. Unified 5-class detector is NOT constructible from obtainable data.
+   Decision: **multi-model architecture** — M1 fire/smoke (D-Fire),
+   M2 helmet/no_helmet (Hard Hats v2), person from frozen COCO-pretrained
+   yolo26n, vest/gloves UNRESOLVED (SH17 blocked), no_safety_vest stays
+   compliance-engine logic.
+4. Additional acquired evidence sources (kept separate, never merged):
+   `production/construction_safety/` (evidence-only; 236 exact duplicates vs
+   Hard Hats v2 measured), `production/coco_person_reference/` (person
+   evaluation reference, 5,000 imgs).

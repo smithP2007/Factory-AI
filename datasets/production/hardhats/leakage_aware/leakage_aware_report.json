@@ -1,0 +1,118 @@
+{
+  "dataset": "hardhats",
+  "method": "leakage-aware group-aware re-split (dHash64 + source keys + temporal adjacency)",
+  "seed": 20261001,
+  "parameters": {
+    "group_threshold_hamming": 8,
+    "temporal_rule": "D-Fire only: same prefix, seq gap<=2, hamming<=16",
+    "ratios_target": {
+      "train": 0.7,
+      "val": 0.2,
+      "test": 0.1
+    },
+    "hash_cache": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/.hash_cache.npz"
+  },
+  "images_total_official": 19745,
+  "exact_duplicates_quarantined": 2318,
+  "images_used": 17427,
+  "groups_total": 13701,
+  "group_size_distribution": {
+    "1": 12263,
+    "2-5": 1385,
+    "6-50": 46,
+    "51-500": 6,
+    ">500": 1
+  },
+  "largest_groups": [
+    641,
+    351,
+    143,
+    92,
+    80,
+    56,
+    55,
+    49,
+    42,
+    41
+  ],
+  "profile_assignment": {
+    "hardhat_only": {
+      "images": 13353,
+      "groups": 10878,
+      "train_images": 9347,
+      "val_images": 2671,
+      "test_images": 1335
+    },
+    "no_hardhat_only": {
+      "images": 3019,
+      "groups": 1888,
+      "train_images": 2113,
+      "val_images": 604,
+      "test_images": 302
+    },
+    "mixed": {
+      "images": 755,
+      "groups": 697,
+      "train_images": 529,
+      "val_images": 151,
+      "test_images": 75
+    },
+    "negative": {
+      "images": 300,
+      "groups": 238,
+      "train_images": 210,
+      "val_images": 60,
+      "test_images": 30
+    }
+  },
+  "splits": {
+    "train": {
+      "images": 12199,
+      "groups": 8473,
+      "boxes": 33492,
+      "class_counts": {
+        "hardhat": 26727,
+        "no-hardhat": 6765
+      }
+    },
+    "val": {
+      "images": 3486,
+      "groups": 3486,
+      "boxes": 11039,
+      "class_counts": {
+        "hardhat": 8301,
+        "no-hardhat": 2738
+      }
+    },
+    "test": {
+      "images": 1742,
+      "groups": 1742,
+      "boxes": 5573,
+      "class_counts": {
+        "hardhat": 4171,
+        "no-hardhat": 1402
+      }
+    }
+  },
+  "negatives_per_split": {
+    "train": 208,
+    "val": 60,
+    "test": 30
+  },
+  "leakage_verification": {
+    "cross_split_pairs_hamming<=8_NEW": 0,
+    "cross_split_pairs_hamming<=4_NEW": 0,
+    "cross_split_pairs_hamming<=2_NEW": 0,
+    "cross_split_pairs_hamming<=8_OFFICIAL_OLD": 83578,
+    "cross_split_pairs_hamming<=2_OFFICIAL_OLD": 17424,
+    "cross_split_pairs_hamming<=8_OFFICIAL_OLD_post_quarantine": 15954,
+    "cross_split_pairs_hamming<=2_OFFICIAL_OLD_post_quarantine": 1159,
+    "verdict": "PASS - zero cross-split near-duplicate pairs at Hamming <= 8"
+  },
+  "intra_split_near_dup_pairs<=8": 45043,
+  "outputs": {
+    "train": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/train.txt",
+    "val": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/val.txt",
+    "test": "/home/z/my-project/Factory-AI/datasets/production/hardhats/leakage_aware/test.txt"
+  }
+}

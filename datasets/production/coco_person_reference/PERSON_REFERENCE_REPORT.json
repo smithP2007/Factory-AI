@@ -1,0 +1,32 @@
+{
+  "dataset": "COCO val2017 person reference",
+  "source": "http://images.cocodataset.org/zips/val2017.zip (815,585,330 bytes) + annotations_trainval2017.zip (252,907,541 bytes)",
+  "license": "annotations: CC BY 4.0 (COCO); images: respective Flickr terms (research use)",
+  "role": "EVALUATION REFERENCE for the COCO-pretrained person detector; NOT merged with any training set",
+  "class_mapping": {
+    "0": "person"
+  },
+  "images": 5000,
+  "labels": 5000,
+  "person_boxes": 10777,
+  "negatives": 2307,
+  "iscrowd_dropped": 227,
+  "unreadable": 0,
+  "boxes_per_image_hist": {
+    "0": 2307,
+    "1": 1045,
+    "2": 436,
+    "3": 268,
+    "4": 148,
+    "5": 119,
+    "6": 110,
+    "7": 67,
+    "8": 37,
+    "9": 60,
+    "10": 64,
+    "11": 47,
+    "12": 49,
+    "13": 243
+  },
+  "unreadable_decode_check": 0
+}

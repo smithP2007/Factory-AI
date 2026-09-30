@@ -33,10 +33,20 @@ fire_smoke:
   # Wikimedia search-query classes -> target class
   fire: fire
   smoke: smoke
-  # Matches D-Fire class indices exactly (so user can swap in D-Fire unchanged)
-  target_classes:
+  # DEMO schema only (demo label files are consistent with it).
+  # ERRATUM (2026-10-01): this does NOT match the official D-Fire archive,
+  # whose verified class order is 0=smoke, 1=fire (see
+  # datasets/production/dfire/CLASS_MAPPING_VERIFICATION.md).
+  target_classes_demo_only:
     0: fire
     1: smoke
+
+# PRODUCTION fire/smoke mapping (VERIFIED statistical + visual, 2026-10-01).
+# Final production class order — use with datasets/production/dfire/dfire_native.yaml.
+production_fire_smoke:
+  target_classes:
+    0: smoke
+    1: fire
 
 deferred:
   ppe:

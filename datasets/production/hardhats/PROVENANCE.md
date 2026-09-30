@@ -49,3 +49,16 @@ Conversion: `scripts/coco_to_yolo_hardhats.py` (COCO bbox x,y,w,h → YOLO cente
 `no_safety_vest` remains a **compliance-engine derivation** (person without overlapping vest box) — nothing acquired contradicts this; no acquired dataset even contains a usable `no_safety_vest` detector class. Nothing here "proves otherwise", so the architecture stands as proposed.
 
 Person supervision note: `person` is deliberately NOT mapped from any acquired source (the Voxel51 variant of this dataset carries model-generated `person` boxes on only 158/5,000 images — see `../voxel51_hardhat_reference/VERIFICATION.md` — which independently verifies the Day 2 finding F1). At inference time the compliance engine can source `person` from the COCO-pretrained base model instead of training it on these images.
+
+---
+
+## UPDATE (2026-10-01, correction phase)
+
+The "DO NOT TRAIN YET" gate is resolved by the leakage-aware re-split
+(`leakage_aware/`, seed 20261001): 2,318 exact duplicates (dHash d=0)
+quarantined; 17,427 images in 13,701 groups split 70/20/10; zero cross-split
+near-duplicate pairs at Hamming <= 8 (official split had 17,424 pairs <= 2
+across its three boundaries). `hardhats_native.yaml` now points at the
+leakage-aware lists. Coverage verdict unchanged: this dataset supplies
+helmet/no_helmet ONLY; person/safety_vest/gloves are NOT covered here
+(architecture decision: `../PPE_ARCHITECTURE_DECISION.md`).

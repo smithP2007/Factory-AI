@@ -10,6 +10,16 @@
 #
 # Class indices match D-Fire (0=fire, 1=smoke) so the user can swap
 # in D-Fire as the production dataset without renumbering.
+#
+# ── ERRATUM (2026-10-01, verified against the official archive) ──────────
+# The claim above is WRONG for the official D-Fire archive, which uses
+#     0 = smoke,  1 = fire
+# (evidence: datasets/production/dfire/CLASS_MAPPING_VERIFICATION.md).
+# This demo YAML keeps its legacy demo-only schema (0=fire, 1=smoke) because
+# the demo label files were generated with it and are internally consistent.
+# PRODUCTION fire/smoke training must use
+#     datasets/production/dfire/dfire_native.yaml  (0=smoke, 1=fire)
+# and never this demo file. Do NOT swap D-Fire images under this demo config.
 
 # Update this to the absolute path on your machine:
 path: /home/z/my-project/PS6-Safety-AI/datasets/fire_smoke

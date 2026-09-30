@@ -1,26 +1,47 @@
-# D-Fire dataset configuration — NATIVE class order (DO NOT TRAIN WITHOUT READING)
+# D-Fire dataset configuration — PRODUCTION fire/smoke (FINAL, VERIFIED MAPPING)
 #
-# ⚠️ CRITICAL: The official D-Fire archive uses 0=smoke, 1=fire.
-#    This is the OPPOSITE of the repo demo schema in datasets/fire_smoke/fire_smoke.yaml
-#    (0=fire, 1=smoke). See PROVENANCE.md for the measured evidence.
+# FINAL PRODUCTION CLASS MAPPING (verified 2026-10-01, statistical + visual):
+#     0 = smoke
+#     1 = fire
 #
-#    The class order below is kept NATIVE to the official archive.
-#    A remap decision to the repo schema is DEFERRED until the reacquired
-#    dataset state is approved. Do not train against this file without
-#    an explicit approved decision on class ordering.
+# Verification evidence: datasets/production/dfire/CLASS_MAPPING_VERIFICATION.md
+#   - Layer 1 (statistical): per-image class composition and per-class box totals
+#     of the acquired archive match the official D-Fire README semantic rows
+#     exactly (only-class-0 = 5,867 = "Only smoke"; only-class-1 = 1,164 =
+#     "Only fire"; class-0 boxes = 11,865 = "Smoke"; class-1 boxes = 14,692 =
+#     "Fire"). All 7 checks PASS.
+#   - Layer 2 (visual): class-colored grids
+#     outputs/dataset_preview/production/dfire_mapping_verification/*.jpg
+#     confirm cyan(0) encloses smoke plumes and orange(1) encloses flames.
+#
+# ⚠️ HISTORY: the repo demo schema (datasets/fire_smoke/fire_smoke.yaml,
+#    datasets/class_mapping.yaml) assumed 0=fire, 1=smoke. That assumption is
+#    WRONG for the official D-Fire archive (documented as Day 2 erratum).
+#    The demo dataset itself remains internally consistent and is untouched;
+#    PRODUCTION must always train against THIS file, never the demo YAML.
 #
 # Official source: https://github.com/gaia-solutions-on-demand/DFireDataset
 # License: none declared; citation required (see PROVENANCE.md)
+# Acquisition: OneDrive direct link, 3,036,222,313 bytes byte-verified,
+# archive dated 2022-04-29; 21,527 images match official README exactly.
 
 path: /home/z/my-project/Factory-AI/datasets/production/dfire
 
-train: train/images
-val: test/images   # official archive ships train/test only; no val split
-test: test/images
+# Leakage-aware split (group-aware re-split; see LEAKAGE_AWARE_SPLIT.md and
+# leakage_aware_report.json). The official train/test split leaks near-identical
+# video frames across splits (35,733 pairs at Hamming <= 2) and MUST NOT be
+# used for unbiased evaluation. The txt lists below reference the ORIGINAL
+# images on disk (no copies), grouped so that near-duplicate frames and
+# same-source frame series never straddle splits.
+train: leakage_aware/train.txt
+val: leakage_aware/val.txt
+test: leakage_aware/test.txt
 
-# NATIVE official class order (evidence in PROVENANCE.md):
+# Official splits kept for reference only (LEAKY - do not evaluate on these):
+# train: train/images
+# test:  test/images
+
+# FINAL verified class order:
 names:
   0: smoke
   1: fire
-
-# NOTE: this differs from the demo fire_smoke.yaml (0: fire, 1: smoke).

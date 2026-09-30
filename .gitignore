@@ -68,3 +68,15 @@ pip-log.txt
 # --- Jupyter ---
 .ipynb_checkpoints/
 *.ipynb_checkpoints
+
+# Hash caches (derived, regenerable by scripts/leakage_aware_split.py)
+datasets/production/**/*.npz
+# COCO person reference: images/labels are data, not tracked
+datasets/production/coco_person_reference/images/
+datasets/production/coco_person_reference/labels/
+datasets/production/coco_person_reference/val2017/
+datasets/production/construction_safety/train/
+datasets/production/construction_safety/valid/
+datasets/production/construction_safety/test/
+datasets/production/construction_safety/_zips/
+datasets/production/coco_person_reference/instances_val2017.json
