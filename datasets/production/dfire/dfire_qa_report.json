@@ -1,0 +1,282 @@
+{
+  "dataset": "dfire",
+  "root": "/home/z/my-project/Factory-AI/datasets/production/dfire",
+  "classes": {
+    "0": "smoke",
+    "1": "fire"
+  },
+  "splits": {
+    "train": {
+      "images": 17221,
+      "labels_on_disk": 17221,
+      "unreadable_images": 0,
+      "images_without_label": 0,
+      "labels_with_syntax_errors": 14,
+      "boxes": 21350,
+      "class_counts": {
+        "smoke": 9543,
+        "fire": 11807
+      },
+      "duplicate_pairs": 506229,
+      "duplicate_examples": [
+        [
+          "AoF00003.jpg",
+          "AoF05073.jpg",
+          0
+        ],
+        [
+          "AoF00003.jpg",
+          "AoF05074.jpg",
+          1
+        ],
+        [
+          "AoF00003.jpg",
+          "AoF05075.jpg",
+          2
+        ],
+        [
+          "AoF00003.jpg",
+          "AoF05076.jpg",
+          0
+        ],
+        [
+          "AoF00003.jpg",
+          "AoF05077.jpg",
+          0
+        ],
+        [
+          "AoF00003.jpg",
+          "WEB06517.jpg",
+          0
+        ],
+        [
+          "AoF00003.jpg",
+          "WEB07512.jpg",
+          3
+        ],
+        [
+          "AoF00004.jpg",
+          "AoF00010.jpg",
+          5
+        ],
+        [
+          "AoF00006.jpg",
+          "AoF00009.jpg",
+          8
+        ],
+        [
+          "AoF00006.jpg",
+          "AoF03647.jpg",
+          7
+        ]
+      ],
+      "preview": "/home/z/my-project/Factory-AI/outputs/dataset_preview/production/dfire/train_preview.jpg"
+    },
+    "test": {
+      "images": 4306,
+      "labels_on_disk": 4306,
+      "unreadable_images": 0,
+      "images_without_label": 0,
+      "labels_with_syntax_errors": 12,
+      "boxes": 5181,
+      "class_counts": {
+        "smoke": 2303,
+        "fire": 2878
+      },
+      "duplicate_pairs": 30455,
+      "duplicate_examples": [
+        [
+          "AoF06728.jpg",
+          "AoF06732.jpg",
+          4
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07576.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07577.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07579.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07580.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07581.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07582.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07583.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "AoF07584.jpg",
+          8
+        ],
+        [
+          "AoF06728.jpg",
+          "WEB10176.jpg",
+          7
+        ]
+      ],
+      "preview": "/home/z/my-project/Factory-AI/outputs/dataset_preview/production/dfire/test_preview.jpg"
+    }
+  },
+  "duplicates": {
+    "threshold": 8,
+    "pairs": [
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "AoF05073.jpg",
+        "hamming": 0
+      },
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "AoF05074.jpg",
+        "hamming": 1
+      },
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "AoF05075.jpg",
+        "hamming": 2
+      },
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "AoF05076.jpg",
+        "hamming": 0
+      },
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "AoF05077.jpg",
+        "hamming": 0
+      },
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "WEB06517.jpg",
+        "hamming": 0
+      },
+      {
+        "split": "train",
+        "a": "AoF00003.jpg",
+        "b": "WEB07512.jpg",
+        "hamming": 3
+      },
+      {
+        "split": "train",
+        "a": "AoF00004.jpg",
+        "b": "AoF00010.jpg",
+        "hamming": 5
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF00009.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03647.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03649.jpg",
+        "hamming": 3
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03650.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03658.jpg",
+        "hamming": 5
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03660.jpg",
+        "hamming": 5
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03668.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "AoF00006.jpg",
+        "b": "AoF03674.jpg",
+        "hamming": 5
+      },
+      {
+        "split": "train",
+        "a": "AoF00007.jpg",
+        "b": "AoF00010.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "AoF00007.jpg",
+        "b": "AoF00020.jpg",
+        "hamming": 6
+      },
+      {
+        "split": "train",
+        "a": "AoF00007.jpg",
+        "b": "AoF03651.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "AoF00007.jpg",
+        "b": "AoF03653.jpg",
+        "hamming": 6
+      }
+    ],
+    "total_pairs": 536684,
+    "hamming_distribution": {
+      "0": 16040,
+      "1": 27991,
+      "2": 34701,
+      "3": 44732,
+      "4": 57070,
+      "5": 71479,
+      "6": 83739,
+      "7": 94921,
+      "8": 106011
+    },
+    "kept_examples": 20,
+    "note": "full pair list truncated from this file to keep the repo lean; complete list in download/dfire_qa_full_pairs.json.gz and regenerable via scripts/qa_acquired_dataset.py"
+  },
+  "errors_total": 26
+}

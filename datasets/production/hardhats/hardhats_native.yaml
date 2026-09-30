@@ -1,0 +1,27 @@
+# Hard Hats (Roboflow "Hard Hats" v2 via keremberke HF mirror) — NATIVE class order
+#
+# Native classes: 0=hardhat, 1=no-hardhat.
+# Mapping to the proposed 5-class PPE target (see PROVENANCE.md):
+#   hardhat -> helmet (1), no-hardhat -> no_helmet (2)
+#   person / safety_vest / gloves: NOT covered by this source.
+#
+# DO NOT TRAIN YET: cross-split near-duplicate leakage documented in
+# PROVENANCE.md (train<->test 5,438 near-identical pairs). Re-split/dedup
+# decision is gated on user approval.
+#
+# License: CC BY 4.0 (Roboflow export).
+
+path: /home/z/my-project/Factory-AI/datasets/production/hardhats
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: hardhat
+  1: no-hardhat
+
+# Proposed target mapping (to be applied ONLY after approval):
+# names:
+#   1: helmet      # from hardhat
+#   2: no_helmet   # from no-hardhat

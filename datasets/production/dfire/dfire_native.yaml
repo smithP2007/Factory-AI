@@ -1,0 +1,26 @@
+# D-Fire dataset configuration — NATIVE class order (DO NOT TRAIN WITHOUT READING)
+#
+# ⚠️ CRITICAL: The official D-Fire archive uses 0=smoke, 1=fire.
+#    This is the OPPOSITE of the repo demo schema in datasets/fire_smoke/fire_smoke.yaml
+#    (0=fire, 1=smoke). See PROVENANCE.md for the measured evidence.
+#
+#    The class order below is kept NATIVE to the official archive.
+#    A remap decision to the repo schema is DEFERRED until the reacquired
+#    dataset state is approved. Do not train against this file without
+#    an explicit approved decision on class ordering.
+#
+# Official source: https://github.com/gaia-solutions-on-demand/DFireDataset
+# License: none declared; citation required (see PROVENANCE.md)
+
+path: /home/z/my-project/Factory-AI/datasets/production/dfire
+
+train: train/images
+val: test/images   # official archive ships train/test only; no val split
+test: test/images
+
+# NATIVE official class order (evidence in PROVENANCE.md):
+names:
+  0: smoke
+  1: fire
+
+# NOTE: this differs from the demo fire_smoke.yaml (0: fire, 1: smoke).

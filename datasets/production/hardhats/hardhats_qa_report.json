@@ -1,0 +1,348 @@
+{
+  "dataset": "hardhats",
+  "root": "/home/z/my-project/Factory-AI/datasets/production/hardhats",
+  "classes": {
+    "0": "hardhat",
+    "1": "no-hardhat"
+  },
+  "splits": {
+    "train": {
+      "images": 13782,
+      "labels_on_disk": 13782,
+      "unreadable_images": 0,
+      "images_without_label": 0,
+      "labels_with_syntax_errors": 0,
+      "boxes": 38701,
+      "class_counts": {
+        "hardhat": 28996,
+        "no-hardhat": 9705
+      },
+      "duplicate_pairs": 148001,
+      "duplicate_examples": [
+        [
+          "-10-_png_jpg.rf.2a17561e1d42108201d8810187653e7b.jpg",
+          "000195_jpg.rf.34582e58d7ba0a926be781b33babb9b4.jpg",
+          8
+        ],
+        [
+          "-10-_png_jpg.rf.2a17561e1d42108201d8810187653e7b.jpg",
+          "000195_jpg.rf.42ebdce72d2184e8cca9f2f5cb280a17.jpg",
+          8
+        ],
+        [
+          "-10-_png_jpg.rf.2a17561e1d42108201d8810187653e7b.jpg",
+          "000195_jpg.rf.f7a8f0db15b069184bbdfeb5b4b5b61e.jpg",
+          0
+        ],
+        [
+          "-100-_png_jpg.rf.bdb81ffdf5d033b194743c9eb8f5c0fc.jpg",
+          "000336_jpg.rf.e53faae494686fd37418fad758c412bc.jpg",
+          7
+        ],
+        [
+          "-1043-_png_jpg.rf.aaede0d1a2cb0f82e48eed5db5a3a092.jpg",
+          "004618_jpg.rf.f21e8e8982ff188c351d0c16cede0ca1.jpg",
+          6
+        ],
+        [
+          "-1044-_png_jpg.rf.29e06d140783c238653b8de020f8124e.jpg",
+          "001306_jpg.rf.07c41f947c40a934b0fa23893fb142a1.jpg",
+          8
+        ],
+        [
+          "-1063-_png_jpg.rf.c5a43ece3d0dda482c084fa23ab3e8f8.jpg",
+          "000728_jpg.rf.946a7acbee8738b6021c45c40194a2bf.jpg",
+          8
+        ],
+        [
+          "-1072-_png_jpg.rf.9d356bba58503033f83497e15e1c9176.jpg",
+          "004337_jpg.rf.74e09365d9b1344f6ae77c191537cbd9.jpg",
+          3
+        ],
+        [
+          "-1072-_png_jpg.rf.9d356bba58503033f83497e15e1c9176.jpg",
+          "004685_jpg.rf.64ac0594a2fb89d4121f0902ed3e4463.jpg",
+          7
+        ],
+        [
+          "-1089-_png_jpg.rf.4c5aba265ae4e765fc8d6b98aa28ddcb.jpg",
+          "005213_jpg.rf.f05b1d8dfabcc29881842b03041f0858.jpg",
+          4
+        ]
+      ],
+      "preview": "/home/z/my-project/Factory-AI/outputs/dataset_preview/production/hardhats/train_preview.jpg"
+    },
+    "valid": {
+      "images": 3962,
+      "labels_on_disk": 3962,
+      "unreadable_images": 0,
+      "images_without_label": 0,
+      "labels_with_syntax_errors": 0,
+      "boxes": 11174,
+      "class_counts": {
+        "hardhat": 8952,
+        "no-hardhat": 2222
+      },
+      "duplicate_pairs": 4804,
+      "duplicate_examples": [
+        [
+          "-1033-_png_jpg.rf.98e3d6f90448901a49590ddcda622543.jpg",
+          "003810_jpg.rf.566b95239f9dde17e73f291ef982b975.jpg",
+          5
+        ],
+        [
+          "-1040-_png_jpg.rf.1250bc23ddbe85f6ad0e88ef2cf89d48.jpg",
+          "004815_jpg.rf.08efff00fca34ac9c289f6fc8be86a40.jpg",
+          2
+        ],
+        [
+          "-1117-_png_jpg.rf.a55d55946188362f7967b692a4b6fe60.jpg",
+          "003649_jpg.rf.a1221b1df550fc846d613c591c9dfe61.jpg",
+          7
+        ],
+        [
+          "-1129-_png_jpg.rf.dcd756f30b1be4b400178337ea9b9e2c.jpg",
+          "001503_jpg.rf.bf363dc4759792c8a2c2cd54e4652265.jpg",
+          2
+        ],
+        [
+          "-1143-_png_jpg.rf.27ec00ebe07fde5fbc4595fc5ff1aeb0.jpg",
+          "00521_jpg.rf.b19ce9fc657c6eb5513b9b80baf8bb74.jpg",
+          8
+        ],
+        [
+          "-1154-_png_jpg.rf.a02e669a67c6e7971c7fd6272175e6ea.jpg",
+          "000310_jpg.rf.df6cb6b40f80f2510824ae7737a6414a.jpg",
+          0
+        ],
+        [
+          "-1279-_png_jpg.rf.4947fd027069015280a940f2534d92ca.jpg",
+          "000149_jpg.rf.0fe9e3a31fc7e4e5eb9850db5519f14a.jpg",
+          7
+        ],
+        [
+          "-1283-_png_jpg.rf.1dbf105d5ec742caa5c9ff002377d97e.jpg",
+          "000185_jpg.rf.30426bd7ac5b2fd5d7bd9c93e024ab8e.jpg",
+          0
+        ],
+        [
+          "-1290-_png_jpg.rf.ad7ff0ffe325c3026254b850d9ef98a9.jpg",
+          "004907_jpg.rf.334f9f056bc01b1a107cc208ae99d95b.jpg",
+          5
+        ],
+        [
+          "-1321-_png_jpg.rf.479ab95af1de32029a8d513b2ea6eb42.jpg",
+          "-3325-_png_jpg.rf.676f3b748835e308b5bfedfb1e33042c.jpg",
+          1
+        ]
+      ],
+      "preview": "/home/z/my-project/Factory-AI/outputs/dataset_preview/production/hardhats/valid_preview.jpg"
+    },
+    "test": {
+      "images": 2001,
+      "labels_on_disk": 2001,
+      "unreadable_images": 0,
+      "images_without_label": 0,
+      "labels_with_syntax_errors": 0,
+      "boxes": 5518,
+      "class_counts": {
+        "hardhat": 4480,
+        "no-hardhat": 1038
+      },
+      "duplicate_pairs": 1088,
+      "duplicate_examples": [
+        [
+          "-1098-_png_jpg.rf.bfb3b54366f77670c1d61b02e360fee9.jpg",
+          "003092_jpg.rf.7003c49a00ae98561db0d9dc2660115d.jpg",
+          7
+        ],
+        [
+          "-1260-_png_jpg.rf.7ba80187e8afd41581182bb9fed00e39.jpg",
+          "000294_jpg.rf.e0461b1ac61f5df65e08ddf226e84899.jpg",
+          6
+        ],
+        [
+          "-1309-_png_jpg.rf.29a0611b1cf50bd7df7814b41f3d1353.jpg",
+          "-3339-_png_jpg.rf.9e04f6080c8b3156ef5929dbc3040f9c.jpg",
+          2
+        ],
+        [
+          "-1386-_png_jpg.rf.cc9d12440853627947a9f7b7a4c67d8a.jpg",
+          "-481-_png_jpg.rf.9390b0a3259f88334bada41b425bbc58.jpg",
+          0
+        ],
+        [
+          "-1449-_png_jpg.rf.fbde01ab32b6dae2778de0b08f203cdb.jpg",
+          "000021_jpg.rf.0f74edbc417ee672a52d84fbab52051d.jpg",
+          1
+        ],
+        [
+          "-1477-_png_jpg.rf.bac8d06edca64da17ced23797d0e2339.jpg",
+          "003240_jpg.rf.3be540c9d7e30f1d6006be9b6527490b.jpg",
+          6
+        ],
+        [
+          "-1700-_png_jpg.rf.c07e7505e61564a58dd3e4460c1f3c84.jpg",
+          "-3543-_png_jpg.rf.e85bcac7880d2488c6e947f2355ad275.jpg",
+          2
+        ],
+        [
+          "-1763-_png_jpg.rf.07fe6b6287f2b3adf200f9cd77ea5a88.jpg",
+          "002043_jpg.rf.4970a653b66bfe466f147bbf99c280bd.jpg",
+          8
+        ],
+        [
+          "-2033-_png_jpg.rf.a38d38660e68247643721b4c1095f22f.jpg",
+          "-2233-_png_jpg.rf.8ff49b7f805c3dbcbe02022382b42a2c.jpg",
+          0
+        ],
+        [
+          "-2060-_png_jpg.rf.0a0516dd73fd7f3d08a8c60230ba478f.jpg",
+          "001263_jpg.rf.c75c06a424aa20ea39f3086073bec619.jpg",
+          4
+        ]
+      ],
+      "preview": "/home/z/my-project/Factory-AI/outputs/dataset_preview/production/hardhats/test_preview.jpg"
+    }
+  },
+  "duplicates": {
+    "threshold": 8,
+    "pairs": [
+      {
+        "split": "train",
+        "a": "-10-_png_jpg.rf.2a17561e1d42108201d8810187653e7b.jpg",
+        "b": "000195_jpg.rf.34582e58d7ba0a926be781b33babb9b4.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "-10-_png_jpg.rf.2a17561e1d42108201d8810187653e7b.jpg",
+        "b": "000195_jpg.rf.42ebdce72d2184e8cca9f2f5cb280a17.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "-10-_png_jpg.rf.2a17561e1d42108201d8810187653e7b.jpg",
+        "b": "000195_jpg.rf.f7a8f0db15b069184bbdfeb5b4b5b61e.jpg",
+        "hamming": 0
+      },
+      {
+        "split": "train",
+        "a": "-100-_png_jpg.rf.bdb81ffdf5d033b194743c9eb8f5c0fc.jpg",
+        "b": "000336_jpg.rf.e53faae494686fd37418fad758c412bc.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1043-_png_jpg.rf.aaede0d1a2cb0f82e48eed5db5a3a092.jpg",
+        "b": "004618_jpg.rf.f21e8e8982ff188c351d0c16cede0ca1.jpg",
+        "hamming": 6
+      },
+      {
+        "split": "train",
+        "a": "-1044-_png_jpg.rf.29e06d140783c238653b8de020f8124e.jpg",
+        "b": "001306_jpg.rf.07c41f947c40a934b0fa23893fb142a1.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "-1063-_png_jpg.rf.c5a43ece3d0dda482c084fa23ab3e8f8.jpg",
+        "b": "000728_jpg.rf.946a7acbee8738b6021c45c40194a2bf.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "-1072-_png_jpg.rf.9d356bba58503033f83497e15e1c9176.jpg",
+        "b": "004337_jpg.rf.74e09365d9b1344f6ae77c191537cbd9.jpg",
+        "hamming": 3
+      },
+      {
+        "split": "train",
+        "a": "-1072-_png_jpg.rf.9d356bba58503033f83497e15e1c9176.jpg",
+        "b": "004685_jpg.rf.64ac0594a2fb89d4121f0902ed3e4463.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1089-_png_jpg.rf.4c5aba265ae4e765fc8d6b98aa28ddcb.jpg",
+        "b": "005213_jpg.rf.f05b1d8dfabcc29881842b03041f0858.jpg",
+        "hamming": 4
+      },
+      {
+        "split": "train",
+        "a": "-1096-_png_jpg.rf.79c8ed07a15995de682a2bcd443e6024.jpg",
+        "b": "005083_jpg.rf.79d16a36e69ed5d5bc9571ccc5428c18.jpg",
+        "hamming": 3
+      },
+      {
+        "split": "train",
+        "a": "-1102-_png_jpg.rf.3a2535058609a2340aa6fe0f172dbd15.jpg",
+        "b": "000493_jpg.rf.7137429260fde7725554ecc518b20bdb.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1102-_png_jpg.rf.3a2535058609a2340aa6fe0f172dbd15.jpg",
+        "b": "000493_jpg.rf.a7311fbce3673a58ceffa6d3762175dc.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1109-_png_jpg.rf.a562c9a9f652758a51febc7e6ab3bac8.jpg",
+        "b": "004705_jpg.rf.f17ed4b1bc7fbce799b75a772eed8032.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1126-_png_jpg.rf.2327944963de7967b00f8dd56e36fba2.jpg",
+        "b": "000165_jpg.rf.78125a3702641899cb602ee582d5caa4.jpg",
+        "hamming": 0
+      },
+      {
+        "split": "train",
+        "a": "-1131-_png_jpg.rf.d2aae52cbf866f22e1e7b1faaf300669.jpg",
+        "b": "001389_jpg.rf.eb24c9ab1efb2c64cd7e8aa06d9ca1dd.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1137-_png_jpg.rf.d349755380383bec038155e4073833ab.jpg",
+        "b": "000078_jpg.rf.99a626e2affd517fb9f39cb6fd25a54e.jpg",
+        "hamming": 1
+      },
+      {
+        "split": "train",
+        "a": "-1138-_png_jpg.rf.cb5af30b47ba130b7903265a88f56872.jpg",
+        "b": "004397_jpg.rf.c2e0c8e220a02b65cd815b8ab53ae875.jpg",
+        "hamming": 8
+      },
+      {
+        "split": "train",
+        "a": "-1139-_png_jpg.rf.52eebd831f76b4ad73df36d7d5095bb2.jpg",
+        "b": "000774_jpg.rf.679416d3544e9bb0a7114b2c1e5f750e.jpg",
+        "hamming": 7
+      },
+      {
+        "split": "train",
+        "a": "-1151-_png_jpg.rf.70429f5e4116667ebd3967df7f943d2c.jpg",
+        "b": "000013_jpg.rf.3240e9bce78f1316966451ec02423d60.jpg",
+        "hamming": 8
+      }
+    ],
+    "total_pairs": 153893,
+    "hamming_distribution": {
+      "0": 7111,
+      "1": 10111,
+      "2": 12622,
+      "3": 14837,
+      "4": 17892,
+      "5": 22178,
+      "6": 20820,
+      "7": 22565,
+      "8": 25757
+    },
+    "kept_examples": 20,
+    "note": "full pair list truncated from this file to keep the repo lean; complete list in download/hardhats_qa_full_pairs.json.gz and regenerable via scripts/qa_acquired_dataset.py"
+  },
+  "errors_total": 0
+}

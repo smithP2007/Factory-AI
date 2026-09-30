@@ -1,0 +1,18 @@
+{
+  "verified": "2026-10-01",
+  "source": "https://huggingface.co/datasets/Voxel51/hard-hat-detection (samples.json, CC0-1.0)",
+  "n_images": 5000,
+  "detection_label_totals": {
+    "helmet": 18966,
+    "head": 5785,
+    "person": 751
+  },
+  "images_containing_each_label": {
+    "helmet": 4581,
+    "head": 920,
+    "person": 158
+  },
+  "person_annotation_coverage": 3.16,
+  "finding": "person boxes exist on only 158/5000 images (3.16%) while helmet boxes exist on 4581/5000 - confirms Day 2 finding F1: Voxel51 person annotations are incomplete and were correctly excluded from person supervision.",
+  "relation_to_historical_PPE_stats": "Voxel51 helmet 18966 / head 5785 vs historical production 'helmet 19071 / no_helmet 5891' - close but not exact; the lost production set was likely a superset or slightly different variant. NOT treated as verification of the historical numbers."
+}
