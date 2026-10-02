@@ -24,8 +24,11 @@ import argparse
 import hashlib
 import json
 import shutil
+from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Tuple
+
+import numpy as np
 
 try:
     import yaml
@@ -202,9 +205,44 @@ def main() -> int:
             manifest["records"].append({"type": "exact_duplicate", "source": str(e["image"]), "kept": str(keep["image"]), "split": e["split"]})
 
     # Optional near-duplicate pass. Only cross-split matches are quarantined automatically.
+    #
+    # Candidate search uses exact multi-index hashing (pigeonhole principle): the
+    # 64-bit dHash is split into (threshold + 1) consecutive bit chunks. Any pair
+    # with Hamming distance <= threshold must agree on at least one full chunk,
+    # so bucketing records by each chunk value and comparing only within buckets
+    # finds exactly the pairs a brute-force O(n^2) scan would find -- identical
+    # results, feasible on 10k+ image datasets. (If threshold >= 64, fall back to
+    # brute force because the pigeonhole argument degenerates.)
     dhash_records = [r for r in records if "dhash" in r and r.get("dhash") is not None]
-    for i, a in enumerate(dhash_records):
-        for b in dhash_records[i + 1 :]:
+    if dhash_records and args.near_threshold < 64:
+        for r in dhash_records:
+            r["_h64"] = np.packbits(np.asarray(r["dhash"].hash).reshape(-1)).tobytes()
+        n_chunks = args.near_threshold + 1
+        base, extra = divmod(64, n_chunks)
+        bounds = []
+        start = 0
+        for c in range(n_chunks):
+            width = base + (1 if c < extra else 0)
+            bounds.append((start, start + width))
+            start += width
+        buckets = [defaultdict(list) for _ in range(n_chunks)]
+        for idx, r in enumerate(dhash_records):
+            h = int.from_bytes(r["_h64"], "big")
+            for c, (lo, hi) in enumerate(bounds):
+                key = (h >> (64 - hi)) & ((1 << (hi - lo)) - 1)
+                buckets[c][key].append(idx)
+        candidate_pairs = set()
+        for c in range(n_chunks):
+            for members in buckets[c].values():
+                if len(members) < 2:
+                    continue
+                for i in range(len(members)):
+                    for j in range(i + 1, len(members)):
+                        a_i, b_i = members[i], members[j]
+                        candidate_pairs.add((a_i, b_i) if a_i < b_i else (b_i, a_i))
+        for a_i, b_i in sorted(candidate_pairs):
+            a = dhash_records[a_i]
+            b = dhash_records[b_i]
             if a["split"] == b["split"]:
                 continue
             if (str(a["image"]), a["split"]) in removed or (str(b["image"]), b["split"]) in removed:
@@ -218,6 +256,22 @@ def main() -> int:
                 drop = b if keep is a else a
                 removed.add((str(drop["image"]), drop["split"]))
                 manifest["records"].append({"type": "near_duplicate", "distance": int(dist), "source": str(drop["image"]), "kept": str(keep["image"]), "split": drop["split"]})
+    elif dhash_records:
+        for i, a in enumerate(dhash_records):
+            for b in dhash_records[i + 1:]:
+                if a["split"] == b["split"]:
+                    continue
+                if (str(a["image"]), a["split"]) in removed or (str(b["image"]), b["split"]) in removed:
+                    continue
+                try:
+                    dist = a["dhash"] - b["dhash"]
+                except Exception:
+                    continue
+                if dist <= args.near_threshold:
+                    keep = a if PRIORITY[a["split"]] >= PRIORITY[b["split"]] else b
+                    drop = b if keep is a else a
+                    removed.add((str(drop["image"]), drop["split"]))
+                    manifest["records"].append({"type": "near_duplicate", "distance": int(dist), "source": str(drop["image"]), "kept": str(keep["image"]), "split": drop["split"]})
 
     for r in records:
         if "image" not in r:

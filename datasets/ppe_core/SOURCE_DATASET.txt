@@ -1,0 +1,4 @@
+Source: https://huggingface.co/datasets/51ddhesh/PPE_Detection
+Declared license: CC BY 4.0
+Target classes retained: helmet, gloves, goggles, vest
+Source classes omitted: safety shoe, mask

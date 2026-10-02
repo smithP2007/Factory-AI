@@ -1,0 +1,226 @@
+[
+  {
+    "file": "preview_01_train_eye-glasses-1-_png.rf.930fc7cd3c8981f4e5.jpg",
+    "source_split": "train",
+    "source_image": "images/train/eye-glasses-1-_png.rf.930fc7cd3c8981f4e5d74181554e0e18.jpg",
+    "n_objects": 1,
+    "classes": [
+      "goggles"
+    ]
+  },
+  {
+    "file": "preview_02_train_eye-glasses-10-_png.rf.300c6b0f31fe19d11.jpg",
+    "source_split": "train",
+    "source_image": "images/train/eye-glasses-10-_png.rf.300c6b0f31fe19d11bba7f506b09d5cf.jpg",
+    "n_objects": 1,
+    "classes": [
+      "goggles"
+    ]
+  },
+  {
+    "file": "preview_03_train_-line-on-a-wooden-table-construction-ind.jpg",
+    "source_split": "train",
+    "source_image": "images/train/-line-on-a-wooden-table-construction-industry-housework-do-it-yourself-photo2_jpg.rf.084b324fe6ef6bee28725dc7fa6750ad.jpg",
+    "n_objects": 2,
+    "classes": [
+      "gloves"
+    ]
+  },
+  {
+    "file": "preview_04_train_-line-on-a-wooden-table-construction-ind.jpg",
+    "source_split": "train",
+    "source_image": "images/train/-line-on-a-wooden-table-construction-industry-housework-do-it-yourself-photo_jpg.rf.0947be3381f7d3e7ae10ff9f07b59ccb.jpg",
+    "n_objects": 2,
+    "classes": [
+      "gloves"
+    ]
+  },
+  {
+    "file": "preview_05_train_00004_jpg.rf.05e41ffe807d5141479832d7cea.jpg",
+    "source_split": "train",
+    "source_image": "images/train/00004_jpg.rf.05e41ffe807d5141479832d7cea02588.jpg",
+    "n_objects": 1,
+    "classes": [
+      "vest"
+    ]
+  },
+  {
+    "file": "preview_06_train_00004_jpg.rf.390ee1eb6fcce27ff52ffe5a04d.jpg",
+    "source_split": "train",
+    "source_image": "images/train/00004_jpg.rf.390ee1eb6fcce27ff52ffe5a04d870fc.jpg",
+    "n_objects": 1,
+    "classes": [
+      "vest"
+    ]
+  },
+  {
+    "file": "preview_07_train_IMG-20240831-WA0413_jpg.rf.04e20ee3bb35a.jpg",
+    "source_split": "train",
+    "source_image": "images/train/IMG-20240831-WA0413_jpg.rf.04e20ee3bb35ae8860c287deb7c1e729.jpg",
+    "n_objects": 3,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_08_train_IMG-20240831-WA0171_jpg.rf.48d036e2f747f.jpg",
+    "source_split": "train",
+    "source_image": "images/train/IMG-20240831-WA0171_jpg.rf.48d036e2f747fcf37d84c706c859e350.jpg",
+    "n_objects": 3,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_09_val_eye-glasses-101-_png.rf.db497955b1ce156c.jpg",
+    "source_split": "val",
+    "source_image": "images/val/eye-glasses-101-_png.rf.db497955b1ce156cc70347dbfa6c9d4b.jpg",
+    "n_objects": 1,
+    "classes": [
+      "goggles"
+    ]
+  },
+  {
+    "file": "preview_10_val_eye-glasses-116-_png.rf.840c2e49f9b1489b.jpg",
+    "source_split": "val",
+    "source_image": "images/val/eye-glasses-116-_png.rf.840c2e49f9b1489b2d5f1a7e45a94dfa.jpg",
+    "n_objects": 1,
+    "classes": [
+      "goggles"
+    ]
+  },
+  {
+    "file": "preview_11_val_IMG-20240831-WA0403_jpg.rf.5aa7dd5cfe2ca.jpg",
+    "source_split": "val",
+    "source_image": "images/val/IMG-20240831-WA0403_jpg.rf.5aa7dd5cfe2ca2418fa6874fd4a7a837.jpg",
+    "n_objects": 3,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_12_val_IMG-20240831-WA0418_jpg.rf.848aeb89ff0cc.jpg",
+    "source_split": "val",
+    "source_image": "images/val/IMG-20240831-WA0418_jpg.rf.848aeb89ff0cc89cc891da8b7ccd2a38.jpg",
+    "n_objects": 3,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_13_val_00011_jpg.rf.a50d9cea9587f30bc866b17839c.jpg",
+    "source_split": "val",
+    "source_image": "images/val/00011_jpg.rf.a50d9cea9587f30bc866b17839cb0002.jpg",
+    "n_objects": 1,
+    "classes": [
+      "vest"
+    ]
+  },
+  {
+    "file": "preview_14_val_00035_jpg.rf.bea6cb1d7fbf7c430c9d0acd4a0.jpg",
+    "source_split": "val",
+    "source_image": "images/val/00035_jpg.rf.bea6cb1d7fbf7c430c9d0acd4a031f36.jpg",
+    "n_objects": 1,
+    "classes": [
+      "vest"
+    ]
+  },
+  {
+    "file": "preview_15_val_IMG-20240831-WA0882_jpg.rf.bce7e0ec941a4.jpg",
+    "source_split": "val",
+    "source_image": "images/val/IMG-20240831-WA0882_jpg.rf.bce7e0ec941a498500878a459bc10464.jpg",
+    "n_objects": 2,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_16_val_IMG-20240831-WA0577_jpg.rf.ef028c84bedbf.jpg",
+    "source_split": "val",
+    "source_image": "images/val/IMG-20240831-WA0577_jpg.rf.ef028c84bedbf6bd35eb2a954149efda.jpg",
+    "n_objects": 5,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_17_test_eye-glasses-102-_png.rf.00d1dffaca6350f5.jpg",
+    "source_split": "test",
+    "source_image": "images/test/eye-glasses-102-_png.rf.00d1dffaca6350f5bb762bb965598591.jpg",
+    "n_objects": 1,
+    "classes": [
+      "goggles"
+    ]
+  },
+  {
+    "file": "preview_18_test_eye-glasses-109-_png.rf.77b23ee9a10b7f7c.jpg",
+    "source_split": "test",
+    "source_image": "images/test/eye-glasses-109-_png.rf.77b23ee9a10b7f7c476c198aa60eb5a1.jpg",
+    "n_objects": 1,
+    "classes": [
+      "goggles"
+    ]
+  },
+  {
+    "file": "preview_19_test_20250710_110451_800_png.rf.57acad686874c.jpg",
+    "source_split": "test",
+    "source_image": "images/test/20250710_110451_800_png.rf.57acad686874c2b84a551d1e5333e7a5.jpg",
+    "n_objects": 2,
+    "classes": [
+      "gloves"
+    ]
+  },
+  {
+    "file": "preview_20_test_20250710_110533_100_png.rf.5ef4181a9f3c5.jpg",
+    "source_split": "test",
+    "source_image": "images/test/20250710_110533_100_png.rf.5ef4181a9f3c5bf6a2480e7e1a2be5dd.jpg",
+    "n_objects": 2,
+    "classes": [
+      "gloves"
+    ]
+  },
+  {
+    "file": "preview_21_test_00014_jpg.rf.86c7c546ef4c62e7360686d32c5.jpg",
+    "source_split": "test",
+    "source_image": "images/test/00014_jpg.rf.86c7c546ef4c62e7360686d32c54ff77.jpg",
+    "n_objects": 2,
+    "classes": [
+      "vest"
+    ]
+  },
+  {
+    "file": "preview_22_test_00014_jpg.rf.d7cbc01e6f0e6ce3073edb3932a.jpg",
+    "source_split": "test",
+    "source_image": "images/test/00014_jpg.rf.d7cbc01e6f0e6ce3073edb3932adeb14.jpg",
+    "n_objects": 2,
+    "classes": [
+      "vest"
+    ]
+  },
+  {
+    "file": "preview_23_test_IMG-20240831-WA0706_jpg.rf.59c45c737870a.jpg",
+    "source_split": "test",
+    "source_image": "images/test/IMG-20240831-WA0706_jpg.rf.59c45c737870a1d3e953352c07de6ba8.jpg",
+    "n_objects": 4,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  },
+  {
+    "file": "preview_24_test_VID-20240831-WA0005_mp4-0012_jpg.rf.3953.jpg",
+    "source_split": "test",
+    "source_image": "images/test/VID-20240831-WA0005_mp4-0012_jpg.rf.39533536af84af04d3a5e0830f21bf40.jpg",
+    "n_objects": 3,
+    "classes": [
+      "gloves",
+      "helmet"
+    ]
+  }
+]

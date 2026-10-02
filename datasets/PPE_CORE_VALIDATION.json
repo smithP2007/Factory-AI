@@ -1,0 +1,64 @@
+{
+  "splits": {
+    "train": {
+      "images": 5687,
+      "labels": 5687,
+      "images_open_ok": 5687,
+      "objects_by_class": {
+        "helmet": 1893,
+        "gloves": 1267,
+        "goggles": 961,
+        "vest": 1854
+      }
+    },
+    "val": {
+      "images": 1575,
+      "labels": 1575,
+      "images_open_ok": 1575,
+      "objects_by_class": {
+        "helmet": 181,
+        "gloves": 422,
+        "goggles": 294,
+        "vest": 632
+      }
+    },
+    "test": {
+      "images": 1227,
+      "labels": 1227,
+      "images_open_ok": 1227,
+      "objects_by_class": {
+        "helmet": 596,
+        "gloves": 298,
+        "goggles": 139,
+        "vest": 471
+      }
+    }
+  },
+  "class_image_coverage": {
+    "train": {
+      "helmet": 790,
+      "gloves": 673,
+      "goggles": 862,
+      "vest": 1029
+    },
+    "val": {
+      "helmet": 145,
+      "gloves": 221,
+      "goggles": 251,
+      "vest": 346
+    },
+    "test": {
+      "helmet": 283,
+      "gloves": 164,
+      "goggles": 126,
+      "vest": 244
+    }
+  },
+  "checks": {
+    "exact_cross_split_dups": 0,
+    "near_cross_split_dups": 0,
+    "total_images": 8489,
+    "foreign_stems": 0
+  },
+  "verdict": "PASS"
+}

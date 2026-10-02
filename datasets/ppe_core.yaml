@@ -1,6 +1,11 @@
 # PS6 core PPE detector
 # Target classes are intentionally limited to the four mandatory PPE categories.
 # Person detection is handled separately by the frozen COCO-pretrained YOLO26n model.
+#
+# This is the template. The GENERATED dataset at datasets/ppe_core/ carries its
+# own working copy (datasets/ppe_core/ppe_core.yaml, path: .) produced by
+# scripts/prepare_ppe_core.py — train against that generated file:
+#   yolo train model=yolo26n.pt data=datasets/ppe_core/ppe_core.yaml ...
 
 path: /path/to/project/datasets/ppe_core
 train: images/train
