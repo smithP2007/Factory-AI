@@ -1,0 +1,203 @@
+PS6 — SWITCH THE PRIMARY IMPLEMENTATION TO CORE PPE
+
+You are working inside the existing PS6 Factory-AI repository.
+Do NOT delete or rewrite the existing validated work.
+Do NOT retrain the fire/smoke model as part of this task.
+
+PROJECT PRIORITY FROM THE PS6 DISCUSSION
+----------------------------------------
+Mandatory/core:
+1. Helmet
+2. Gloves
+3. Goggles
+4. Safety vest
+
+Optional/later:
+5. Fire
+6. Smoke
+
+The current M1 fire/smoke work is retained as an optional extension. The main engineering effort must now move to the four PPE classes above.
+
+ARCHITECTURE
+------------
+Implement the main pipeline as:
+
+CCTV/video
+  -> person detection + tracking
+  -> PPE detector (helmet, gloves, goggles, vest)
+  -> person↔PPE association
+  -> compliance engine
+  -> persistent-violation gate
+  -> explainable result / evidence
+
+Do NOT make `no_helmet`, `no_gloves`, `no_goggles`, or `no_vest` physical detector classes unless you have verified, genuinely annotated data for those absence/violation classes. For this implementation, missing PPE is inferred by the compliance engine from the worker's associated PPE detections.
+
+DATASET
+-------
+Use this primary candidate:
+https://huggingface.co/datasets/51ddhesh/PPE_Detection
+
+Dataset card currently declares CC BY 4.0 and six classes:
+Vest, Safety Shoe, Mask, Helmet, Goggles, Gloves.
+Declared object counts:
+Vest 4418
+Safety Shoe 2006
+Mask 2763
+Helmet 2703
+Goggles 1431
+Gloves 2693
+Total 16014
+
+Important:
+- Use only helmet, gloves, goggles, vest.
+- Exclude mask and safety shoe from the detector labels.
+- Do not silently rename mask/shoe to any PS6 class.
+- The dataset has no stated person class; use the existing COCO YOLO26n person detector separately.
+
+DATASET PREPARATION
+-------------------
+1. Download the dataset.
+2. Preserve the original raw source unchanged under datasets/raw/ppe/.
+3. Convert/filter it into datasets/ppe_core/.
+4. Use final classes exactly:
+   0 helmet
+   1 gloves
+   2 goggles
+   3 vest
+5. Preserve train/valid/test semantics as train/val/test.
+6. Verify every image opens.
+7. Verify every label has five numeric fields.
+8. Verify coordinates are in [0,1] and width/height > 0.
+9. Compute exact hashes across all splits.
+10. Compute perceptual hashes when practical.
+11. Quarantine cross-split exact/near duplicates and write a manifest.
+12. Re-run validation after quarantine.
+13. Generate at least 20 visually annotated previews with all four target classes represented where possible.
+14. Produce datasets/PPE_DATASET_REPORT.md with source, license, counts, mapping, exclusions, duplicate audit, and limitations.
+
+MODEL
+-----
+Train a dedicated PPE detector from yolo26n.pt.
+Do NOT retrain person detection.
+
+Baseline training on the GPU host:
+- model: yolo26n.pt
+- imgsz: 640
+- epochs: 100
+- batch: 16 initially on a T4/RTX 4060; reduce if VRAM requires
+- workers: 2
+- patience: 20
+- seed: 42
+- amp: true
+- save_period: 10
+
+Use an unseen test split for the final reported evaluation.
+Record:
+- precision
+- recall
+- mAP50
+- mAP50-95
+- per-class metrics
+- best epoch
+- training time
+- inference latency/FPS
+
+Do not fabricate any metric.
+
+PERSON↔PPE ASSOCIATION
+----------------------
+Implement a worker association stage.
+
+For each tracked worker, determine whether helmet/gloves/goggles/vest detections belong to that worker.
+Use worker-relative geometry and confidence, not only global proximity.
+
+Suggested approximate regions:
+- helmet: upper ~35% of worker box
+- goggles: upper ~45%
+- vest: central torso region
+- gloves: lower/mid body regions, allowing side offset
+
+Use an expanded worker box to handle small offsets and overlap.
+Make thresholds configurable.
+
+COMPLIANCE RULE
+---------------
+For a standard zone, required PPE = helmet + gloves + goggles + vest.
+
+Worker is compliant only when all four are associated.
+Otherwise:
+NON-COMPLIANT
+Missing: [specific PPE classes]
+
+For the MVP, one confident associated glove detection is treated as evidence of gloves present. Clearly document that this is a simplification; later versions can require left/right glove evidence.
+
+PERSISTENT VIOLATIONS
+----------------------
+Do not trigger an alert on a single bad frame.
+Use a configurable persistence gate. Start with:
+- 3 consecutive violating observations -> confirm violation
+- 2 consecutive clear observations -> clear state
+
+Make the logic work by worker track ID.
+
+DEMO REQUIREMENT
+----------------
+The demo must prove both cases:
+
+Case A:
+Worker with helmet + gloves + goggles + vest
+-> COMPLIANT
+
+Case B:
+Worker with one or more missing PPE items
+-> NON-COMPLIANT
+-> exact missing PPE listed
+-> worker ID shown
+-> evidence frame/time can be captured
+
+MULTI-WORKER REQUIREMENT
+------------------------
+The demo must support multiple workers in one frame/video, not just a single isolated person.
+
+FALSE ALERT REDUCTION
+---------------------
+Explain that false alerts are reduced through:
+- confidence threshold
+- worker-level association
+- temporal persistence
+- tracking
+- explicit compliance rules
+
+LIMITATIONS TO DOCUMENT
+-----------------------
+- small gloves and goggles can be difficult in low-resolution CCTV
+- heavy occlusion can prevent association
+- extreme camera angles can hide PPE
+- one-glove MVP rule is a simplification
+- domain shift between public datasets and the target factory can reduce performance
+
+OPTIONAL FIRE/SMOKE
+-------------------
+Keep the existing fire/smoke M1 model untouched and label it as an optional hazard extension. Do not let it distract from the PPE core deliverable.
+
+FILES TO PRODUCE
+----------------
+datasets/ppe_core/ppe_core.yaml
+datasets/PPE_DATASET_REPORT.md
+scripts/prepare_ppe_core.py
+scripts/compliance_engine.py
+scripts/train_ppe.py
+scripts/run_ppe_demo.py
+models/ppe_best.pt
+PPE_MODEL_REPORT.md
+
+GIT
+---
+Before editing, inspect the current branch and commit state.
+Create a clean checkpoint before major changes.
+After successful validation, create a commit describing the PPE-core milestone.
+Do not push credentials or secrets.
+
+STOP CONDITION
+--------------
+Do not build the final FastAPI/dashboard/alert infrastructure in this task unless those components already exist. First make the PPE model + worker association + compliance demo trustworthy.

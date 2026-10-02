@@ -1,0 +1,14 @@
+# PS6 core PPE detector
+# Target classes are intentionally limited to the four mandatory PPE categories.
+# Person detection is handled separately by the frozen COCO-pretrained YOLO26n model.
+
+path: /path/to/project/datasets/ppe_core
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: helmet
+  1: gloves
+  2: goggles
+  3: vest

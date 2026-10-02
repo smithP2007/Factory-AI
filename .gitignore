@@ -81,6 +81,12 @@ datasets/production/construction_safety/test/
 datasets/production/construction_safety/_zips/
 datasets/production/coco_person_reference/instances_val2017.json
 
+# --- PPE core phase (51ddhesh/PPE_Detection): data NOT committed, docs/manifests ARE ---
+datasets/raw/ppe/51ddhesh_PPE_Detection/
+datasets/ppe_core/images/
+datasets/ppe_core/labels/
+datasets/ppe_core/quarantine/
+
 # --- Credentials / secrets (NEVER commit) ---
 .env
 .env.*
